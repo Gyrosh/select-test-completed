@@ -17,9 +17,13 @@ It sends value upwards by using `@Output()` decorator and `EventEmitter` class.
 Accepted parameters: 
 
 `#employeeSelect` - pointer to a element via `@ViewChild` property decorator to specify type of this component
+
 `listData` - data user wants to display
+
 `formControlName` - name of field in the form
+
 `config` - an object of type `SelectComponentConfig` to describe how component should behave
+
 `invalid` - expression to evaluate wheter field is invalid
 
 To specify a type of this component, declare it in parent component using `@ViewChild()`, for example:
@@ -38,8 +42,11 @@ export interface SelectComponentConfig<T> {
 ```
 
 `fieldPlaceholder` - initial text to display
+
 `valueDataKey` - value of attribute(key) that should be sent to form
+
 `displayDataKeys` - what values should be displayed in the list
+
 `groupByType` - if and how values should be grouped in select. `type` accepts only `AUTH_GROUP_TYPE` and `FIELD_GROUP_TYLE` as a values. `fieldData` accepts a key of object(string) or an object of type `T`(for `AUTH_GROUP_TYPE` grouping)
 
 Example config:
@@ -81,14 +88,14 @@ Like in previous component, its type is specified using `@ViewChild()`:
 Example usage in template:
 
 ```html
-      <app-base-select-option 
+    <app-base-select-option 
         #optionValueContainer
         *ngFor="let option of listData" 
         [option]="option"
         [dataKeysDisplay]="config.displayDataKeys" 
         (selectionChanged)="onSelectionChanged($event)"
-      >
-      </app-base-select-option>
+    >
+    </app-base-select-option>
 ```
 
 Data is displayed using `ng-container` and looping through fields in object:
