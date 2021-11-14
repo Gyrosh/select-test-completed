@@ -1,0 +1,63 @@
+[
+    {
+      "id": 0,
+      "name": "Daniel",
+      "lastname": "Mitchell",
+      "department": "IT"
+    },
+    {
+      "id": 1,
+      "name": "Albert",
+      "lastname": "Alexander",
+      "department": "IT"
+    },
+    {
+      "id": 2,
+      "name": "Philip",
+      "lastname": "Hughes",
+      "department": "HR"
+    },
+    {
+      "id": 3,
+      "name": "Walter",
+      "lastname": "Nelson",
+      "department": "IT"
+    },
+    {
+      "id": 4,
+      "name": "Ashley",
+      "lastname": "Hernandez",
+      "department": "HR"
+    },
+    {
+      "id": 5,
+      "name": "Donna",
+      "lastname": "Washington",
+      "department": "Finances"
+    },
+    {
+      "id": 6,
+      "name": "Andrew",
+      "lastname": "White",
+      "department": "IT"
+    },
+    {
+      "id": 7,
+      "name": "Sharon",
+      "lastname": "Allen",
+      "department": "Finances"
+    },
+    {
+      "id": 8,
+      "name": "Russell",
+      "lastname": "Parker",
+      "department": "Finances"
+    },
+    {
+      "id": 9,
+      "name": "Janet",
+      "lastname": "Stewart",
+      "department": "HR"
+    }
+  ]
+  

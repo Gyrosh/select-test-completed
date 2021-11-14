@@ -1,0 +1,35 @@
+<div class="custom-select" [ngClass]="{'invalid': invalid}" (click)="toggleList()" >
+    <span *ngIf="!selected">{{ config.fieldPlaceholder }} </span>
+    <span *ngIf="selected">
+      <ng-container *ngFor="let dataValue of config.displayDataKeys">
+        {{ selected[dataValue] }}
+      </ng-container>
+    </span>
+    <i class="arrow down"></i>
+</div>
+<div *ngIf="openList" class="custom-select-container">
+  <div class="custom-select-container__options">
+    <ng-container *ngIf="groups">
+      <ng-container *ngFor="let group of groups">
+        <p class="custom-select-container__group-name">{{ group }}</p>
+          <app-base-select-option 
+          #optionValueContainer
+          *ngFor="let groupValue of groupValues[group]" 
+          [option]="groupValue"
+          [dataKeysDisplay]="config.displayDataKeys" 
+          (selectionChanged)="onSelectionChanged($event)">
+        </app-base-select-option>
+      </ng-container>
+    </ng-container>
+    <ng-container *ngIf="!groups">
+      <app-base-select-option 
+      #optionValueContainer
+      *ngFor="let option of listData" 
+      [option]="option"
+      [dataKeysDisplay]="config.displayDataKeys" 
+      (selectionChanged)="onSelectionChanged($event)">
+      </app-base-select-option>
+    </ng-container>
+  </div>
+</div>
+

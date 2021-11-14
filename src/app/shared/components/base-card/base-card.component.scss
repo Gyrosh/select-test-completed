@@ -1,0 +1,13 @@
+:host(.base-card--success) {
+  .base-card__card {
+    background-color: #f0fcf3;
+  }
+}
+
+.base-card__card {
+  padding: 30px 40px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  margin: 40px 0;
+}

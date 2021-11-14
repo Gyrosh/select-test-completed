@@ -1,0 +1,77 @@
+<main>
+  <app-header title="New event"></app-header>
+  <form 
+    *ngIf="form"
+    [formGroup]="form"
+    autocomplete="off"
+    (ngSubmit)="submit()"
+  >
+    <app-base-card>
+      <h2>About</h2>
+      <app-form-field title="Title">
+        <app-base-input
+          formControlName="title"
+          type="text"
+          placeholder="Make it short and clear"
+          [invalid]="(form | getFormControl : 'title').invalid | isFieldInvalid : submitted"
+        ></app-base-input>
+      </app-form-field>
+      <app-form-field title="Category">
+        <app-base-select-group 
+          #categorySelect
+          [listData]="categories" 
+          formControlName="category"
+          [config]="categorySelectConfig"
+          [invalid]="(form | getFormControl : 'category').invalid | isFieldInvalid : submitted"
+        >
+        </app-base-select-group>
+      </app-form-field>
+      <app-form-field title="Date">
+        <app-base-input
+          formControlName="date"
+          type="date"
+          placeholder="Date"
+          [invalid]="(form | getFormControl : 'date').invalid | isFieldInvalid : submitted"
+        ></app-base-input>
+      </app-form-field>
+    </app-base-card>
+
+    <app-base-card>
+        <h2>Coordinator</h2>
+        <app-form-field title="Responsible">
+          <app-base-select-group 
+            #employeeSelect
+            [listData]="employees"
+            formControlName="coordinatorId"
+            [config]="employeesSelectConfig"
+            [invalid]="(form | getFormControl : 'coordinatorId').invalid | isFieldInvalid : submitted"
+          >
+          </app-base-select-group>
+        </app-form-field>
+        <app-form-field title="Select by department">
+          <app-base-select-group 
+            #employeeWithDepartmentSelect
+            [listData]="employeesWithDep"
+            formControlName="coordinatorDepId"
+            [config]="employeesWithDepSelectConfig"
+            [invalid]="(form | getFormControl : 'coordinatorDepId').invalid | isFieldInvalid : submitted"
+          >
+          </app-base-select-group>
+        </app-form-field>
+        <app-form-field title="Phone">
+          <app-base-input
+            formControlName="coordinatorPhone"
+            type="text"
+            placeholder="Phone"
+            [invalid]="(form | getFormControl : 'coordinatorPhone').invalid | isFieldInvalid : submitted"
+          ></app-base-input>
+        </app-form-field>
+      </app-base-card>
+
+    <div class="actions">
+      <app-base-button type="submit">
+        publish event
+      </app-base-button>
+    </div>
+  </form>
+</main>

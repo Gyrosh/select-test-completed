@@ -1,0 +1,8 @@
+<div class="option-row">
+    <p class="option-row__value" (click)="onSelectedOption(option)">
+        <ng-container *ngFor="let dataValue of dataKeysDisplay">
+            {{ option[dataValue] }}
+        </ng-container>
+    </p>
+</div>
+
